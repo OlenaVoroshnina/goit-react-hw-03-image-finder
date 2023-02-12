@@ -52,7 +52,7 @@ export class App extends Component {
   }
 
   render() {
-    const { status, error, images } = this.state;
+    const { status, images } = this.state;
 
     console.log(this.state.images);
 
