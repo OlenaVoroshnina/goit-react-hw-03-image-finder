@@ -1,7 +1,10 @@
-export default function ImageGalleryItem({ key, imageSmall, imageLarge, tag }) {
+import { Item } from "./ImageGalleryItem.styled";
+import { ImageItem } from "./ImageGalleryItem.styled";
+
+export default function ImageGalleryItem({ id, imageSmall, imageLarge, tag }) {
   return (
-    <li class="gallery-item" key={key} url = {imageLarge}>
-      <img src={imageSmall} alt= {tag} />
-    </li>
+    <Item key={id} url = {imageLarge}>
+      <ImageItem src={imageSmall} alt= {tag} />
+    </Item>
   );
 }
