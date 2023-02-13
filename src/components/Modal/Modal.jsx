@@ -10,6 +10,8 @@ export default class Modal extends Component {
   }
 
   render() {
+
+
     return createPortal(
       <div className="overlay">
         <div className="modal">
@@ -19,3 +21,10 @@ export default class Modal extends Component {
     );
   }
 }
+
+
+// const instance = basicLightbox.create(`
+//     <img src="assets/images/image.png" width="800" height="600">
+// `)
+
+// instance.show()
