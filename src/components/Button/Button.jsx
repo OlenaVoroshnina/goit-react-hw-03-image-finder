@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { SearchButton } from './Button.styled';
 
 const Button = ({ children, onClick }) => (
-  <button type="submit" className="button" onClick = {onClick}>
-    {/* {children} */}
-    <span className="button-label">{children}</span>
-  </button>
+  <SearchButton type="submit" onClick = {onClick}>
+    {children}
+    {/* <span>{children}</span> */}
+  </SearchButton>
 );
 
 Button.defaultProps = {

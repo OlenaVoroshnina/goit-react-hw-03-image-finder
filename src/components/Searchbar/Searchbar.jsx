@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 // import { toast } from 'react-toastify';
 import Button from 'components/Button/Button';
 import {ReactComponent as SearchIcon} from '../icons/searchIcon.svg'
-// import { BiSearchAlt2 } from "react-icons/bi";
-import {SearchbarHeader} from '../App.styled';
+import {SearchbarHeader, SearchForm, Input} from './Searchbar.styled';
+
+
 
 
 export default class Searchbar extends Component {
@@ -31,25 +32,20 @@ export default class Searchbar extends Component {
   render() {
     return (
       <SearchbarHeader className="searchbar" >
-        <form className="form" onSubmit={this.handleSubmit}>
-          {/* <button type="submit" class="button">
-            <span class="button-label">Search</span>
-          </button> */}
+        <SearchForm className="form" onSubmit={this.handleSubmit}>
           <Button >
-            {/* <BiSearchAlt2 widths='40' height= '40'/> */}
-            <SearchIcon width='10' height='10'/>
+            <SearchIcon width='20' height='20'/>
           </Button>
-          <input
+          <Input
             type="text"
-            // className="input"
-            // autocomplete="off"
-            // autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
             name="word"
             value={this.state.word}
             onChange={this.handleChangeWord}
           />
-        </form>
+        </SearchForm>
       </SearchbarHeader>
     );
   }
