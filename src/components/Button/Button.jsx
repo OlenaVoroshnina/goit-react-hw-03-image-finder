@@ -4,8 +4,7 @@ import { SearchButton } from './Button.styled';
 
 const Button = ({ children, onClick }) => (
   <SearchButton type="submit" onClick = {onClick}>
-    {children}
-    {/* <span>{children}</span> */}
+    <span>{children}</span>
   </SearchButton>
 );
 
