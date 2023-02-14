@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LoadMoreButton } from './Button.styled';
+import { LoadMoreButton } from './LoadMore.styled';
 
 const LoadMore = ({ children, onClick }) => (
   <LoadMoreButton type="button" onClick = {onClick}>

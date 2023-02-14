@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Searchbar from './Searchbar/Searchbar';
 import { Container } from './App.styled';
 import ImageGallery from './ImageGallery/ImageGallery';
-import LoadMore from './Button/LoadMore';
+import LoadMore from './LoadMore/LoadMore';
 import { fetchPhotosByQuery } from 'services/Api';
 import { Loader } from './Loader/Loader';
 
