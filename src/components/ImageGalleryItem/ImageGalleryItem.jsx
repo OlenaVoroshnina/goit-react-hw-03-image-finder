@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { Item } from "./ImageGalleryItem.styled";
-import { ImageItem } from "./ImageGalleryItem.styled";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Item } from './ImageGalleryItem.styled';
+import { ImageItem } from './ImageGalleryItem.styled';
 import Modal from 'components/Modal/Modal';
 
 export default class ImageGalleryItem extends Component {
@@ -10,35 +11,24 @@ export default class ImageGalleryItem extends Component {
   toggleModal = () => {
     this.setState({
       showModal: !this.state.showModal,
-    })
-  }
+    });
+  };
 
-  render(){
-    const {showModal} = this.state;
-    const {id, imageSmall, imageLarge, tag} = this.props
+  render() {
+    const { showModal } = this.state;
+    const { id, imageSmall, imageLarge, tag } = this.props;
     return (
-          <Item key={id} onClick = {this.toggleModal} >
-            {showModal && <Modal onClick = {this.toggleModal}>{imageLarge}</Modal>}
-            <ImageItem src={imageSmall} alt= {tag} />
-          </Item>
-        );
+      <Item key={id} onClick={this.toggleModal}>
+        {showModal && <Modal onClick={this.toggleModal}>{imageLarge}</Modal>}
+        <ImageItem src={imageSmall} alt={tag} />
+      </Item>
+    );
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-// export default function ImageGalleryItem({ id, imageSmall, imageLarge, tag }) {
-//   return (
-//     <Item key={id} url = {imageLarge}>
-//       <ImageItem src={imageSmall} alt= {tag} />
-//     </Item>
-//   );
-// }
+ImageGalleryItem.propTypes = {
+  id: PropTypes.number,
+  imageSmall: PropTypes.string.isRequired,
+  imageLarge: PropTypes.string.isRequired,
+  tag: PropTypes.string,
+};
