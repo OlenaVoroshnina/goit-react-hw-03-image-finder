@@ -20,7 +20,7 @@ export class App extends Component {
   async componentDidUpdate(_, prevState) {
     const { query, page } = this.state;
     if (prevState.query !== query || prevState.page !== page) {
-      this.setState({ isLoading: true, images: [] });
+      this.setState({ isLoading: true, });
       try {
         const { hits, totalHits } = await fetchPhotosByQuery(query, page);
         this.setState(prevState => ({
@@ -38,7 +38,14 @@ export class App extends Component {
   }
 
   handleSearchbarSubmit = query => {
-    this.setState({ query, page: 1 });
+    this.setState({ 
+      query, 
+      page: 1, 
+      images: [],
+      error: null,
+      isLoading: false,
+      showLoadMore: false,
+     });
   };
 
   loadMore = () => {
