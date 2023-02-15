@@ -31,6 +31,7 @@ export class App extends Component {
           return alert('Nothing found for your request. Please, try again');
         }
       } catch (error) {
+        this.setState({error: error.message,})
       } finally {
         this.setState({ isLoading: false });
       }
